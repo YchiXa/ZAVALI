@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter } from "lucide-react";
+import { Instagram, Youtube } from "lucide-react";
 import Link from "next/link";
 
 import { SEO_CONFIG } from "~/app";
@@ -21,9 +21,10 @@ export function Footer({ className }: { className?: string }) {
             md:grid-cols-4
           `}
         >
+          {/* 1. Логотип, описание и социальные ссылки */}
           <div className="space-y-4">
             <Link className="flex items-center gap-2" href="/">
-              <span className={`zavali-text text-xl font-bold tracking-tight`}>
+              <span className="zavali-text text-xl font-bold tracking-tight">
                 {SEO_CONFIG.name}
               </span>
             </Link>
@@ -37,16 +38,8 @@ export function Footer({ className }: { className?: string }) {
                 size="icon"
                 variant="ghost"
               >
-                <Facebook className="h-4 w-4" />
+                <Youtube className="h-4 w-4" />
                 <span className="sr-only">YouTube</span>
-              </Button>
-              <Button
-                className="h-8 w-8 rounded-full"
-                size="icon"
-                variant="ghost"
-              >
-                <Twitter className="h-4 w-4" />
-                <span className="sr-only">TikTok</span>
               </Button>
               <Button
                 className="h-8 w-8 rounded-full"
@@ -58,7 +51,9 @@ export function Footer({ className }: { className?: string }) {
               </Button>
             </div>
           </div>
-          <div>
+
+          {/* 2 & 3: вместо пустого div используем автопозиционирование */}
+          <div className="md:col-start-3">
             <h3 className="mb-4 text-sm font-semibold">Магазин</h3>
             <ul className="space-y-2 text-sm">
               <li>
@@ -129,7 +124,8 @@ export function Footer({ className }: { className?: string }) {
               </li>
             </ul>
           </div>
-          <div>
+
+          <div className="md:col-start-4">
             <h3 className="mb-4 text-sm font-semibold">Компания</h3>
             <ul className="space-y-2 text-sm">
               <li>
@@ -149,31 +145,9 @@ export function Footer({ className }: { className?: string }) {
                     text-muted-foreground
                     hover:text-foreground
                   `}
-                  href="/careers"
-                >
-                  Карьера
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className={`
-                    text-muted-foreground
-                    hover:text-foreground
-                  `}
                   href="/blog"
                 >
                   Блог
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className={`
-                    text-muted-foreground
-                    hover:text-foreground
-                  `}
-                  href="/press"
-                >
-                  Пресса
                 </Link>
               </li>
               <li>
@@ -189,45 +163,8 @@ export function Footer({ className }: { className?: string }) {
               </li>
             </ul>
           </div>
-          <div>
-            <h3 className="mb-4 text-sm font-semibold">Поддержка</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  className={`
-                    text-muted-foreground
-                    hover:text-foreground
-                  `}
-                  href="/help"
-                >
-                  Центр помощи
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className={`
-                    text-muted-foreground
-                    hover:text-foreground
-                  `}
-                  href="/privacy"
-                >
-                  Политика конфиденциальности
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className={`
-                    text-muted-foreground
-                    hover:text-foreground
-                  `}
-                  href="/terms"
-                >
-                  Условия использования
-                </Link>
-              </li>
-            </ul>
-          </div>
         </div>
+
         <div className="mt-12 border-t pt-8">
           <div
             className={`
@@ -240,9 +177,7 @@ export function Footer({ className }: { className?: string }) {
               защищены.
             </p>
             <div
-              className={
-                "flex items-center gap-4 text-sm text-muted-foreground"
-              }
+              className={`flex items-center gap-4 text-sm text-muted-foreground`}
             >
               <Link className="hover:text-foreground" href="/privacy">
                 Конфиденциальность
@@ -252,9 +187,6 @@ export function Footer({ className }: { className?: string }) {
               </Link>
               <Link className="hover:text-foreground" href="/cookies">
                 Куки
-              </Link>
-              <Link className="hover:text-foreground" href="/sitemap">
-                Карта сайта
               </Link>
             </div>
           </div>

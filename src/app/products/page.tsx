@@ -30,80 +30,44 @@ interface Product {
 
 const products: Product[] = [
   {
-    category: "Не думая",
+    category: "Слабо",
     id: "1",
-    image:
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    image: "/flower.webp",
     inStock: true,
-    name: "Премиальные беспроводные наушники",
+    name: "Ужасный Букет, Не Менее УЖАСНОМУ Человеку(",
     originalPrice: 249.99,
     price: 199.99,
     rating: 4.5,
   },
   {
-    category: "Слабо",
+    category: "Среднее",
     id: "2",
-    image:
-      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    image: "/candy.webp",
     inStock: true,
-    name: "Умные часы серии 5",
+    name: "Конфеты Для ХУДШИХ!",
     originalPrice: 349.99,
     price: 299.99,
     rating: 4.2,
   },
   {
-    category: "Среднее",
-    id: "3",
-    image:
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    inStock: false,
-    name: "Профессиональный фотоаппарат",
-    originalPrice: 1499.99,
-    price: 1299.99,
-    rating: 4.8,
-  },
-  {
-    category: "Жестко",
-    id: "4",
-    image:
-      "https://images.unsplash.com/photo-1506377295352-e3154d43ea9e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    inStock: true,
-    name: "Эргономичное офисное кресло",
-    originalPrice: 299.99,
-    price: 249.99,
-    rating: 4.6,
-  },
-  {
     category: "Невероятно",
     id: "5",
-    image:
-      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    image: "/prank.webp",
     inStock: true,
-    name: "Смартфон Pro Max",
+    name: "Интерактивный Подарок",
     originalPrice: 1099.99,
     price: 999.99,
     rating: 4.9,
   },
   {
     category: "Не думая",
-    id: "6",
-    image:
-      "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    inStock: true,
-    name: 'Ультра HD Смарт ТВ 55"',
-    originalPrice: 899.99,
-    price: 799.99,
-    rating: 4.7,
-  },
-  {
-    category: "Не думая",
     id: "7",
     image: "/random.webp",
     inStock: true,
-    name: "Случайный подарок",
-    originalPrice: 199.99,
-    price: 149.99,
-    rating: 4.3,
+    name: "Случайный Подарок",
+    originalPrice: 0,
+    price: 1000,
+    rating: 5,
   },
 ];
 
@@ -120,14 +84,14 @@ export default function ProductsPage() {
   const categories: Category[] = React.useMemo(() => {
     // Filter out empty categories and ensure uniqueness
     const dynamic = Array.from(
-      new Set(products.map((p) => p.category).filter(Boolean))
+      new Set(products.map((p) => p.category).filter(Boolean)),
     ).sort();
     return ["All", ...dynamic];
   }, []);
 
   /* ----------------------------- State ---------------------------------- */
   const [selectedCategory, setSelectedCategory] = React.useState<Category>(
-    categoryFromUrl || "All"
+    categoryFromUrl || "All",
   );
 
   // Update selected category when URL changes
@@ -143,7 +107,7 @@ export default function ProductsPage() {
       selectedCategory === "All"
         ? products
         : products.filter((p) => p.category === selectedCategory),
-    [selectedCategory]
+    [selectedCategory],
   );
 
   /* --------------------------- Handlers --------------------------------- */
@@ -159,11 +123,11 @@ export default function ProductsPage() {
             name: product.name,
             price: product.price,
           },
-          1 // (quantity) always adds 1 item to the cart
+          1, // (quantity) always adds 1 item to the cart
         );
       }
     },
-    [addItem]
+    [addItem],
   );
 
   const handleAddToWishlist = React.useCallback((productId: string) => {

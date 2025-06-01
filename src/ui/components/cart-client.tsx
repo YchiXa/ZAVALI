@@ -50,7 +50,7 @@ export function CartClient() {
   const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
   const subtotal = cartItems.reduce(
     (acc, item) => acc + item.price * item.quantity,
-    0
+    0,
   );
 
   const handleUpdateQuantity = (id: string, newQuantity: number) => {
@@ -275,9 +275,9 @@ export function CartClient() {
         <SheetTrigger asChild>{CartTrigger}</SheetTrigger>
         <SheetContent
           className={`
-          flex w-full flex-col
-          sm:max-w-lg
-        `}
+            flex w-full flex-col
+            sm:max-w-lg
+          `}
         >
           <SheetHeader>
             <SheetTitle>Ваша корзина</SheetTitle>

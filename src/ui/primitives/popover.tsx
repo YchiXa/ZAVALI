@@ -1,7 +1,8 @@
 "use client";
 
-import type PopoverPrimitive from "@radix-ui/react-popover";
-import * as React from "react";
+import type * as React from "react";
+
+import * as PopoverPrimitive from "@radix-ui/react-popover";
 
 import { cn } from "~/lib/utils";
 
@@ -41,7 +42,7 @@ function PopoverContent({
             data-[state=open]:animate-in data-[state=open]:fade-in-0
             data-[state=open]:zoom-in-95
           `,
-          className
+          className,
         )}
         data-slot="popover-content"
         sideOffset={sideOffset}

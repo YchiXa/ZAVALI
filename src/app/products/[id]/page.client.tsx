@@ -52,7 +52,7 @@ const slugify = (str: string) =>
 
 const products: Product[] = [
   {
-    category: "Не думая",
+    category: "Слабо",
     description:
       "Премиальные беспроводные наушники с активным шумоподавлением и премиальным звуком.",
     features: [
@@ -64,13 +64,12 @@ const products: Product[] = [
       "Сенсорное управление",
     ],
     id: "1",
-    image:
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    image: "/flower.webp",
     inStock: true,
-    name: "Премиальные беспроводные наушники",
+    name: "Ужасный Букет, Не Менее УЖАСНОМУ Человеку(",
     originalPrice: 249.99,
     price: 199.99,
-    rating: 4.5,
+    rating: 5,
     specs: {
       batteryLife: "30 часов",
       brand: "SoundPro",
@@ -82,7 +81,7 @@ const products: Product[] = [
     },
   },
   {
-    category: "Слабо",
+    category: "Среднее",
     description:
       "Оставайтесь на связи и отслеживайте свои фитнес-цели с нашими продвинутыми умными часами. Функции мониторинга здоровья, GPS-отслеживание и красивый всегда включенный дисплей.",
     features: [
@@ -94,13 +93,12 @@ const products: Product[] = [
       "Настраиваемые циферблаты",
     ],
     id: "2",
-    image:
-      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    image: "/candy.webp",
     inStock: true,
-    name: "Умные часы серии 5",
+    name: "Конфеты Для ХУДШИХ!",
     originalPrice: 349.99,
     price: 299.99,
-    rating: 4.2,
+    rating: 5,
     specs: {
       batteryLife: "7 дней",
       brand: "TechFit",
@@ -109,66 +107,6 @@ const products: Product[] = [
       model: "Watch Pro 5",
       warranty: "1 год",
       waterResistance: "5 ATM",
-    },
-  },
-  {
-    category: "Среднее",
-    description:
-      "Создавайте потрясающие фотографии и видео с нашим профессиональным фотоаппаратом. Включает высокочувствительный сенсор, запись видео 4K и универсальный набор объективов для любой съемочной ситуации.",
-    features: [
-      "Полнокадровый сенсор 24.2МП",
-      "Запись видео 4K при 60 кадрах в секунду",
-      "5-осевая стабилизация изображения",
-      "Защищенный от погодных условий корпус",
-      "Два слота для SD-карт",
-      "Включает объектив 24-70мм f/2.8",
-    ],
-    id: "3",
-    image:
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    inStock: false,
-    name: "Профессиональный фотоаппарат",
-    originalPrice: 1499.99,
-    price: 1299.99,
-    rating: 4.8,
-    specs: {
-      brand: "OptiPro",
-      iso: "100-51,200 (расширяемый до 204,800)",
-      model: "X-1000",
-      resolution: "24.2МП",
-      sensorType: "Полнокадровый CMOS",
-      shutter: "1/8000 до 30 сек",
-      warranty: "2 года",
-    },
-  },
-  {
-    category: "Жестко",
-    description:
-      "Работайте с комфортом в нашем эргономичном офисном кресле, разработанном для поддержки в течение всего дня. Регулируемая высота, поддержка поясницы и дышащая сетчатая спинка.",
-    features: [
-      "Регулируемая высота и подлокотники",
-      "Дышащая сетчатая спинка",
-      "Поддержка поясницы",
-      "Поворот на 360°",
-      "Прочное основание с плавно катящимися колесиками",
-      "Максимальная нагрузка: 136 кг",
-    ],
-    id: "4",
-    image:
-      "https://images.unsplash.com/photo-1506377295352-e3154d43ea9e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    inStock: true,
-    name: "Эргономичное офисное кресло",
-    originalPrice: 299.99,
-    price: 249.99,
-    rating: 4.6,
-    specs: {
-      adjustableHeight: "40-50 см",
-      brand: "ErgoComfort",
-      dimensions: "66x66x96-106 см",
-      material: "Сетчатая спинка, тканевое сиденье",
-      maxWeight: "136 кг",
-      model: "Executive Pro",
-      warranty: "5 лет",
     },
   },
   {
@@ -184,13 +122,12 @@ const products: Product[] = [
       "Аккумулятор на весь день",
     ],
     id: "5",
-    image:
-      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    image: "/prank.webp",
     inStock: true,
-    name: "Смартфон Pro Max",
+    name: "Интерактивный Подарок",
     originalPrice: 1099.99,
     price: 999.99,
-    rating: 4.9,
+    rating: 5,
     specs: {
       battery: "4,352мАч",
       brand: "TechPro",
@@ -206,63 +143,25 @@ const products: Product[] = [
   {
     category: "Не думая",
     description:
-      "Преобразите домашние развлечения с нашим Ultra HD Smart TV, предлагающим яркие цвета, иммерсивный звук и умное подключение.",
-    features: [
-      '4K Ultra HD дисплей 55"',
-      "Dolby Vision HDR",
-      "Звук Dolby Atmos",
-      "Встроенный голосовой помощник",
-      "Интеграция с умным домом",
-      "Несколько портов HDMI и USB",
-    ],
-    id: "6",
-    image:
-      "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    inStock: true,
-    name: 'Ультра HD Смарт ТВ 55"',
-    originalPrice: 899.99,
-    price: 799.99,
-    rating: 4.7,
-    specs: {
-      audio: "40Вт Dolby Atmos",
-      brand: "VisionPro",
-      connectivity: "HDMI x4, USB x3, Wi-Fi, Bluetooth",
-      display: '55" 4K Ultra HD LED',
-      hdr: "Dolby Vision, HDR10+",
-      model: "X55-4K",
-      refreshRate: "120Гц",
-      resolution: "3840 x 2160",
-      smartFeatures: "Голосовое управление, Магазин приложений",
-      warranty: "2 года",
-    },
-  },
-  {
-    category: "Не думая",
-    description:
       "Случайный подарок, который точно удивит. Не знаете что подарить? Доверьтесь нам!",
     features: [
-      "Случайный выбор из нашей коллекции",
-      "Гарантированное удивление",
+      "Случайный выбор из нашей коллекции и больше",
       "Уникальный опыт",
-      "Неожиданный результат",
       "Эмоции гарантированы",
-      "Возможность обмена",
+      "Заплатите столько сколько ужаса хотите!",
     ],
     id: "7",
     image: "/random.webp",
     inStock: true,
     name: "Случайный подарок",
-    originalPrice: 199.99,
-    price: 149.99,
-    rating: 4.3,
+    originalPrice: 0,
+    price: 1000,
+    rating: 5,
     specs: {
-      brand: "SurpriseBox",
-      category: "Случайный выбор",
-      delivery: "1-3 дня",
-      exchange: "Возможен в течение 14 дней",
-      model: "Random Gift Box",
-      warranty: "14 дней",
-      weight: "До 2 кг",
+      Возврат: "Невозможен",
+      Доставка: "В выбранный день",
+      Категория: "Случайный выбор",
+      Товар: "Случайный подарок",
     },
   },
 ];
@@ -299,7 +198,7 @@ const ProductDetailPageClient: React.FC = () => {
   const discountPercentage = React.useMemo(() => {
     if (!product?.originalPrice) return 0;
     return Math.round(
-      ((product.originalPrice - currentPrice) / product.originalPrice) * 100
+      ((product.originalPrice - currentPrice) / product.originalPrice) * 100,
     );
   }, [product?.originalPrice, currentPrice]);
 
@@ -325,7 +224,7 @@ const ProductDetailPageClient: React.FC = () => {
         setCustomPrice(value);
       }
     },
-    []
+    [],
   );
 
   const handleAddToCart = React.useCallback(async () => {
@@ -340,7 +239,7 @@ const ProductDetailPageClient: React.FC = () => {
         name: product.name,
         price: currentPrice,
       },
-      quantity
+      quantity,
     );
     setQuantity(1);
     toast.success(`${product.name} добавлен в корзину`);
@@ -362,7 +261,7 @@ const ProductDetailPageClient: React.FC = () => {
             <h1 className="text-3xl font-bold">Продукт Не Найден</h1>
             <p className="mt-4">Продукт, который вы ищете, не существует.</p>
             <Button className="mt-6" onClick={() => router.push("/products")}>
-              Вернуться к Продуктам
+              Вернуться к Товарам
             </Button>
           </div>
         </main>
@@ -387,7 +286,7 @@ const ProductDetailPageClient: React.FC = () => {
             onClick={() => router.push("/products")}
             variant="ghost"
           >
-            ← Вернуться к Продуктам
+            ← Вернуться к Товарам
           </Button>
 
           {/* Main grid */}
@@ -442,7 +341,7 @@ const ProductDetailPageClient: React.FC = () => {
                           Минимальная цена: 1,000₽
                         </span>
                         <span className="text-sm text-muted-foreground">
-                          Максимальная цена: 10,000₽
+                          Хотите больше 10,000₽?
                         </span>
                       </div>
                       <Slider
@@ -501,8 +400,8 @@ const ProductDetailPageClient: React.FC = () => {
                           </div>
                           <p
                             className={`
-                            text-center text-xs text-muted-foreground
-                          `}
+                              text-center text-xs text-muted-foreground
+                            `}
                           >
                             Минимальная сумма: 10,000₽
                           </p>
@@ -604,7 +503,7 @@ const ProductDetailPageClient: React.FC = () => {
           >
             {/* Features */}
             <section>
-              <h2 className="mb-4 text-2xl font-bold">Features</h2>
+              <h2 className="mb-4 text-2xl font-bold">Описание</h2>
               <ul className="space-y-2">
                 {product.features.map((feature, index) => (
                   <li
@@ -620,7 +519,7 @@ const ProductDetailPageClient: React.FC = () => {
 
             {/* Specifications */}
             <section>
-              <h2 className="mb-4 text-2xl font-bold">Specifications</h2>
+              <h2 className="mb-4 text-2xl font-bold">Детали</h2>
               <div className="space-y-2">
                 {Object.entries(product.specs).map(([key, value]) => (
                   <div

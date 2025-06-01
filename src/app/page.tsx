@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { cn } from "~/lib/utils";
+import { CategorySection } from "~/ui/components/category-section";
 import { HeroBadge } from "~/ui/components/hero-badge";
 import { ProductCard } from "~/ui/components/product-card";
 import { TestimonialsSection } from "~/ui/components/testimonials/testimonials-with-marquee";
@@ -15,7 +16,7 @@ import {
   CardTitle,
 } from "~/ui/primitives/card";
 
-import { categories, featuredProductsHomepage, testimonials } from "./mocks";
+import { featuredProductsHomepage, testimonials } from "./mocks";
 
 const featuresWhyChooseUs = [
   {
@@ -45,10 +46,12 @@ export default function HomePage() {
   return (
     <>
       <main
-        className={`
-          flex min-h-screen flex-col gap-y-16 bg-gradient-to-b from-muted/50
-          via-muted/25 to-background
-        `}
+        className={cn(
+          `
+            flex min-h-screen flex-col gap-y-16 bg-gradient-to-b from-muted/50
+            via-muted/25 to-background
+          `,
+        )}
       >
         {/* Hero Section */}
         <section
@@ -79,7 +82,6 @@ export default function HomePage() {
               <div className="flex flex-col justify-center space-y-6">
                 <div className="space-y-4">
                   <HeroBadge />
-
                   <h1
                     className={`
                       font-display text-4xl leading-tight font-bold
@@ -90,7 +92,9 @@ export default function HomePage() {
                     `}
                   >
                     Анти-подарки для самых{" "}
-                    <span className="font-['Neucha'] text-red-500">худших</span>{" "}
+                    <span className={`font-['Neucha'] text-red-500`}>
+                      худших
+                    </span>{" "}
                     людей
                   </h1>
                   <p
@@ -99,8 +103,9 @@ export default function HomePage() {
                       md:text-xl
                     `}
                   >
-                    Откройте для себя новый мир "подарков", где не нужно думать
-                    что подарить. Довертесь нам и человек точно получит эмоции.
+                    Откройте для себя новый мир "анти-подарков", где не нужно
+                    думать что подарить. Доверьтесь нам и человек точно получит
+                    эмоции.
                   </p>
                 </div>
                 <div
@@ -180,100 +185,8 @@ export default function HomePage() {
           />
         </section>
 
-        {/* Featured Categories */}
-        <section
-          className={`
-            py-12
-            md:py-16
-          `}
-        >
-          <div
-            className={`
-              container mx-auto max-w-7xl px-4
-              sm:px-6
-              lg:px-8
-            `}
-          >
-            <div className="mb-8 flex flex-col items-center text-center">
-              <h2 className="text-center text-3xl font-bold tracking-tight">
-                Покупка по категориям
-              </h2>
-              <div className="mt-2 h-1 w-12 rounded-full bg-primary" />
-              <p className="mt-4 max-w-2xl text-center text-muted-foreground">
-                Найдите идеальное решение для мести
-              </p>
-            </div>
-            <div
-              className={cn(
-                "grid grid-cols-2 gap-4",
-                "md:grid-cols-4 md:gap-6",
-                "[&>*:last-child]:md:col-start-2"
-              )}
-            >
-              {categories.map((category) => (
-                <Link
-                  aria-label={`Browse ${category.name} products`}
-                  className={cn(
-                    "group relative flex flex-col space-y-4 overflow-hidden",
-                    `
-                      rounded-2xl border bg-card shadow transition-all
-                      duration-300
-                      hover:shadow-lg
-                    `
-                  )}
-                  href={`/products?category=${encodeURIComponent(
-                    category.name
-                  )}`}
-                  key={category.name}
-                >
-                  <div className={cn("relative aspect-[4/3] overflow-hidden")}>
-                    <div
-                      className={cn(
-                        `
-                          absolute inset-0 z-10 bg-gradient-to-t
-                          from-background/80 to-transparent
-                        `
-                      )}
-                    />
-                    <div
-                      className={cn(
-                        `
-                          absolute inset-0 transition duration-300
-                          group-hover:scale-105
-                        `
-                      )}
-                    >
-                      <Image
-                        alt={category.name}
-                        className="object-cover"
-                        fill
-                        src={`/${
-                          category.color === "gradient-red-black"
-                            ? "incredibly.webp"
-                            : category.color === "purple"
-                            ? "nothink.webp"
-                            : category.color === "green"
-                            ? "weakly.webp"
-                            : category.color === "orange"
-                            ? "medium.webp"
-                            : category.color === "red"
-                            ? "strongly.webp"
-                            : "placeholder.svg"
-                        }`}
-                      />
-                    </div>
-                  </div>
-                  <div className="p-4">
-                    <h3 className="text-lg font-semibold">{category.name}</h3>
-                    <p className="mt-1 text-sm text-muted-foreground">
-                      {category.productCount} товаров
-                    </p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Categories Section */}
+        <CategorySection />
 
         {/* Featured Products */}
         <section
